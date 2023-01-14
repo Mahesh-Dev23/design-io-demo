@@ -1,12 +1,362 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: rgba(255, 255, 255, .6);
+}
+
+*{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+p{
+  font-size: .8rem;
+  line-height: .8rem;
+  margin: 0;
+  margin-top: 10px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.transit{
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  
+}
+.title{
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, .3);
+  color: rgba(255, 255, 255, .7);
+  place-self: center;
+  margin: 0;
+  
+}
+.bigTitle{
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 3rem;
+  line-height: 3rem;
+  margin: 0;
+}
+.section{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 1fr 10%;
+  gap: 20px;
+  align-items: start stretch;
+  box-sizing: border-box;
+  position: relative;
+}
+.iText{
+  background: rgba(255, 0, 0, .5);
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+  width: 250px;
+  font-size: .8rem;
+}
+.mainColors{
+  
+  padding: 50%;
+  background: rgba(0,0,0,.8);
+  border: 1px solod red;
+}
+.conical{
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: grid;
+  /* place-content: center; */
+  /* justify-items: center stretch;
+  align-items: center; */
+  padding: 25%;
+  
+}
+.conicalInside{
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: white;
+}
+.colorInputs{
+  place-self: center;
+  width: 50%;
+  height: 65%;
+  border-radius: 20px;
+  background: rgba(0,0,0,.5);
+  padding: 20px;
+  display: grid;
+  align-items: stretch;
+}
+.colorInputs p{
+  width: auto;
+  padding: 10px;
+}
 
+.colorInputs input{
+ margin: 0 auto;
+ text-align: center;
+ width: 100%;
+ background: rgba(0,0,0,.8);
+}
+.inputSample{
+  width: 100%;
+  justify-self: center;
+  display: grid;
+  place-content: center;
+  padding: 20px;
+}
+.ColorSchemeSection{
+  /* width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 1fr 10%;
+  gap: 20px;
+  align-items: start stretch; */
+  /* place-content: center; */
+  /* background: #efefef; */
+}
+.colorSchemes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 0px solid lightGray;
+  justify-content: stretch;
+  padding:  0 20%;
+}
+.backgroundSection{
+  transition-duration: 1s;
+}
+.navSection{
+  /* background: rgba(255, 255, 255, .1); */
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto auto ;
+  gap: 5px;
+  align-content: start stretch;
+  overflow: hidden;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+.backgroundOptions{
+  /* background: rgba(255, 255, 255, .1); */
+  border-radius: 10px;
+  place-self: center;
+  /* place-content: start stretch; */
+  display: grid;
+  grid-template-columns: auto auto auto auto ;
+  gap: 1px;
+  justify-content: start stretch;
+  overflow: hidden;
+}
+.designOptions{
+  aspect-ratio: 16/9;
+  /* width: calc((78vh /9) * 16); */
+  height: 70vh;
+  justify-self: center;
+  border: 0px solid rgba(255, 255, 255, .2);
+  display: grid;
+  place-content: center;
+}
+.colorThemes{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  place-content: center;
+  padding: 0 100px;
+}
+.colorCircle{
+  aspect-ratio : 1/1;
+  background: conic-gradient(rgba(0,0,0,1), rgba(0,0,0,1)) padding-box,
+  var(--circleGradient) border-box;
+  border-radius: 50%;
+  border: 60px solid transparent;
+  /* border-radius: 50%; */
+  /* display: grid; */
+  /* grid-template-columns: 50% 50%; */
+  /* border: 0px solid lightGray;
+  justify-content: center;
+  align-content: center;
+  aspect-ratio : 1/1;
+  position:relative;
+  overflow: hidden; */
+  /* background: red; */
+  /* padding: 50px;
+  z-index: 2; */
+}
+/* .colorCircle::after{
+  position: absolute;
+  border: 10px solid yellow;
+  background: red;
+  background-image: var(--circleAfter, 'conic-gradient(red, green)');
+  top: -40px; 
+  bottom: 40px;
+  left: -40px; 
+  right: 40px;
+  padding: 20px;
+  z-index: -1;
+} */
+.layoutBox{
+  width: 200px;
+  height: 80px;
+  display: grid;
+  place-content: center;
+}
+.btn{
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  font-size: .8rem;
+  background: rgba(0, 0, 0, .1);
+  color: rgba(255, 255, 255, .5);
+  place-self: center;
+  margin: 0;
+  transition-duration: .5s;
+  position:relative;
+  cursor: pointer;
+}
+.btn-round{
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: .8rem;
+  background: rgba(0, 0, 0, .1);
+  color: rgba(255, 255, 255, .5);
+  place-self: center;
+  margin: 0;
+  transition-duration: .5s;
+  
+}
+.btn:hover, .btn-round:hover{
+  background: rgba(0, 0, 0, .3);
+  color: rgba(255, 255, 255, .7);
+}
+.popBtnStack{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  /* border-bottom: 1px solid rgba(0, 0, 0, .5); */
+  justify-content: center stretch;
+  padding: 10px 0;
+}
+.popbtn{
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  font-size: .8rem;
+  background: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, .5);
+  transition-duration: .5s;
+  position: relative;
+}
+.popbtn:hover{
+  color: rgba(255, 255, 255, .8);
+  background: rgba(0, 0, 0, .3);
+}
+.colorBtn{
+  height: 40px;
+  width: 100%;
+  /* margin-bottom: 5px; */
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition-duration: .5s;
+}
+.colorBtn:hover{
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+input{
+  background-color: rgba(0, 0, 0, .3);
+  border: none;
+  padding: 10px 5px;
+  margin: 3px 0;
+  color: rgba(255, 255, 255, .8);
+  width: 100%;
+}
+.closeBtn{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 5px;
+  top: 5px;
+  background:rgba(255, 0, 0, .5);
+  color: rgba(255, 255, 255, .8);
+  font-size: .8rem;
+  text-transform: capitalize;
+  display: grid;
+  place-content: center;
+  transition-duration: .5s;
+}
+.closeBtn:hover{
+  background:rgba(255, 0, 0, .8);
+  color: rgba(255, 255, 255, 1);
+}
+/* .btn::before{
+  background: rgba(255, 255, 255, .5);
+  height: 100px;
+  width: 100px;
+  content: "hey";
+  margin-top: -100%;
+} */
+.dropdown{
+  background: rgba(255, 255, 255, .5);
+  height: 100px;
+  width: 100px;
+  z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+.popUp{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 40%;
+  /* height: 40%; */
+  border-radius: 20px;
+  background: rgba(0, 0, 0, .5);
+  padding: 40px;
+  transition-duration: 1s;
+}
+.slideContol{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  gap: 2px;
+  /* background: rgba(0, 0, 0, .5); */
+  grid-template-columns: repeat(5, auto) ;
+  align-self: end;
+}
+.btn-slide{
+  width: 20px; 
+  height: 20px;
+  border-radius: 50%;
+  padding: 2px;
+  text-align: center;
+  font-size: .7rem;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
